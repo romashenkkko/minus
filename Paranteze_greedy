@@ -1,0 +1,19 @@
+# Fie un șir de paranteze rotunde, deschise sau închise. Putem efectua de câte ori dorim operația de transformare a unei paranteze deschise într-una închisă sau invers. Să se determine numărul minim de operații necesare transformării secvenței inițiale într-una corect parantezată. Dacă acest lucru nu este posibil, se va afișa -1.
+s = input("Introdu sirul din paranteze rotunde: ")
+
+def SchimbamParanteze(s):
+        numar = 0
+        miscari = 0
+        if len(s)%2 == 0:
+                for i in range(len(s)):
+                        if s[i] == '(':
+                                numar += 1
+                        if s[i] == ')':
+                                numar -=1
+                miscari = abs(numar)
+        else:
+                print(-1)
+
+        return miscari
+
+print(f"Trebuie sa efectuam {SchimbamParanteze(s)} miscari pentru a egala parantezele")
